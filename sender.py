@@ -6,12 +6,12 @@ import time
 import os
 
 
-def send(data, url, key):
+def send(data, url):
     print 'send', data
     try:
-        headers = {'Content-type': 'application/json', 'Accept': 'text/plain', 'X-PYTILT-KEY': key}
+        headers = {'Content-type': 'application/json'}
         r = requests.post(url, data=json.dumps(data), headers=headers)
-        return r.status_code == 200
+        return r.status_code == 201
     except requests.exceptions.RequestException:
         return False
 
@@ -23,7 +23,6 @@ class Sender(object):
         self.sending = []
         self.batch_size = batch_size
         self.url = os.environ.get('PYTILT_URL', None)
-        self.key = os.environ.get('PYTILT_KEY', None)
 
     def add_data(self, data):
         self.queue.append(data)
