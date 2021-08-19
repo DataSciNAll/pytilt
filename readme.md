@@ -1,6 +1,7 @@
 Pytilt
 ==========
 Tool for reading your Tilt brewing hydrometer[1] in python on a rasberry pi and send the data to a server.
+Revised to post via REST API to update Azure IoT Hub
 
 
 Installation

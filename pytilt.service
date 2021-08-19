@@ -5,7 +5,7 @@ After=multi-user.target
 [Service]
 Type=idle
 Environment=PYTILT_URL=http://10.0.0.36:8080
-Environment=PYTILT_KEY=YOUR_KEY
+Environment=PYTILT_KEY='<SAS TOKEN>'
 ExecStart=/usr/bin/python /home/pi/pytilt/pytilt.py > /home/pi/pytilt.log 2>&1
 
 [Install]
