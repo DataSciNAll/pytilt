@@ -34,7 +34,7 @@ class Sender(object):
         pool = Pool(processes=1)
         self.sending = list(self.queue)
         self.queue = []
-        result = pool.apply_async(send, args=[self.sending, self.url], callback=self.completed)
+        result = pool.apply_async(send, args=[self.sending, self.url, self.sas], callback=self.completed)
         pool.close()
         pool.join()
 
